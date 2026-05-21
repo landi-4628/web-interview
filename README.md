@@ -1,5 +1,8 @@
 # 前端面试八股 · 学习目录
 
+- **在线阅读（GitHub Pages）**：<https://landi-4628.github.io/web-interview/>
+- **GitHub 仓库**：<https://github.com/landi-4628/web-interview>
+
 > 完整版：`2026-前端面试八股文-超全完整版.md`  
 > 分章带案例版：见下方 `chapters/` 目录
 
@@ -35,46 +38,30 @@
 
 ---
 
-## 挂到 GitHub 并用网页打开
+## 更新与部署
 
-### 方式一：GitHub Pages（推荐，像网站一样浏览）
+本仓库：<https://github.com/landi-4628/web-interview>  
+站点由 **GitHub Pages** 发布（Docsify：`index.html` + `_sidebar.md`）。
 
-本目录已带好 **Docsify** 配置（`index.html` + `_sidebar.md`），推上去后可在浏览器里看侧边栏、搜索、分章阅读。
-
-**步骤：**
-
-1. 在 [GitHub 新建仓库](https://github.com/new)（例如 `frontend-bagu`，选 **Public**）。
-2. 在本目录打开终端，执行（把地址换成你的仓库）：
+### 推送更新
 
 ```powershell
 cd D:\lpy\八股
-git init
 git add .
-git commit -m "Add frontend interview notes"
-git branch -M main
-git remote add origin https://github.com/你的用户名/frontend-bagu.git
-git push -u origin main
+git commit -m "更新内容"
+git push origin master
 ```
 
-3. 打开仓库 **Settings → Pages**：
-   - **Source**：Deploy from a branch  
-   - **Branch**：`main`，文件夹选 **`/ (root)`**  
-   - 保存后等 1～3 分钟。
+推送后 Pages 通常 1～3 分钟内生效，访问 <https://landi-4628.github.io/web-interview/>。
 
-4. 访问：`https://你的用户名.github.io/frontend-bagu/`  
-   （仓库名不同则改 URL 最后一段。）
-
-本地可先预览（需已安装 Node）：
+### 本地预览
 
 ```powershell
+cd D:\lpy\八股
 npx serve .
 # 浏览器打开 http://localhost:3000
 ```
 
-### 方式二：只在 GitHub 上看 Markdown
+### Pages 未开启时
 
-不配置 Pages 也可以：把仓库推上去后，在网页里点开任意 `.md` 文件，GitHub 会自动渲染（无侧边栏，适合偶尔查看）。
-
-### 方式三：私有仓库
-
-私有仓同样可用 Pages（GitHub 免费账号支持私有仓 Pages）。若不想公开，建仓库时选 **Private**，Pages 地址仅你知道（可再配合仓库可见权限）。
+仓库 **Settings → Pages**：Source 选 **Deploy from a branch**，分支 `master`，目录 **`/ (root)`**。
